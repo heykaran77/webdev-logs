@@ -13,6 +13,7 @@ const CourseList = () => {
           key={idx}
           style={{
             marginTop: "1rem",
+            borderRadius: "8px",
             width: "100%",
             padding: "1rem 2rem",
             backgroundColor: "#2d2d2d",

@@ -15,7 +15,13 @@ const CourseForm = () => {
     setCourseTitle("");
   };
   return (
-    <div className="form-container">
+    <div
+      className="form-container"
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "2rem",
+      }}>
       <input
         value={courseTitle}
         onChange={(e) => setCourseTitle(e.target.value)}
