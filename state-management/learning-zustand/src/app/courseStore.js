@@ -10,20 +10,21 @@ const courseStore = (set) => ({
   },
   removeCourse: (courseId) => {
     set((state) => ({
-      courses: courses.filter((course) => course.id !== courseId),
+      courses: state.courses.filter((course) => course.id !== courseId),
     }));
   },
   toggleCourseStatus: (courseId) => {
     set((state) => ({
-      courses: courses.map((course) =>
-        course.id === courseId ? { ...course, completed: !completed } : course
+      courses: state.courses.map((course) =>
+        course.id === courseId
+          ? { ...course, completed: !course.completed }
+          : course
       ),
     }));
   },
 });
 
-//Creating the store
-const useCourse = create(
+const useCourseStore = create(
   devtools(
     persist(courseStore, {
       name: "courses",
@@ -31,4 +32,4 @@ const useCourse = create(
   )
 );
 
-export default useCourse;
+export default useCourseStore;
