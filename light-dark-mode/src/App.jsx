@@ -8,8 +8,10 @@ const App = () => {
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
+      document.documentElement.classList.remove("light");
     } else {
       document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
     }
   }, [darkMode]);
 
@@ -17,7 +19,7 @@ const App = () => {
     setDarkMode(!darkMode);
   };
   return (
-    <div className="min-h-screen bg-neutral-400 dark:bg-neutral-900 relative transition-colors duration-300 isolate">
+    <div className="min-h-screen bg-neutral-200 dark:bg-neutral-900 relative transition-colors duration-300 isolate">
       <div className="absolute inset-0 -z-10">
         <div
           className="absolute inset-0 opacity-30 dark:hidden"

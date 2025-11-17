@@ -1,4 +1,14 @@
-import { BsBookHalf, BsCodeSquare, BsGraphUp } from "react-icons/bs";
+import {
+  BsBookHalf,
+  BsBrightnessHighFill,
+  BsCheckCircleFill,
+  BsCodeSquare,
+  BsCopy,
+  BsGraphUp,
+  BsStarFill,
+  BsStarHalf,
+} from "react-icons/bs";
+import { RiReactjsFill, RiTailwindCssFill } from "react-icons/ri";
 
 const Hero = () => {
   return (
@@ -6,7 +16,7 @@ const Hero = () => {
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 -left-1/4 w-1/2 h-1/2 bg-amber-400 dark:bg-amber-500 rounded-full blur-3xl opacity-20"></div>
       </div>
-      <div className="container mx-auto px-6 md:px-24 py-20 md:py-24 lg:py-28 xl:py-32">
+      <div className="container mx-auto px-6 md:px-24 py-20">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 xl:gap-16">
           <div className="flex-1 space-y-6 lg:space-y-7">
             <div className="space-y-4 lg:space-y-5">
@@ -47,7 +57,111 @@ const Hero = () => {
                 <span>Docs</span>
               </button>
             </div>
+            <div className="flex flex-col sm:flex-row gap-5 sm:items-center pt-6 lg:pt-7 border-t border-neutral-200 dark:border-neutral-800">
+              <div className="flex -space-x-3">
+                <img
+                  src="https://randomuser.me/api/portraits/lego/1.jpg"
+                  className="w-9 h-9 lg:w-10 lg:h-10 rounded-full border-2 dark:border-white border-neutral-900 object-cover"
+                  alt=""
+                />
+                <img
+                  src="https://randomuser.me/api/portraits/lego/2.jpg"
+                  className="w-9 h-9 lg:w-10 lg:h-10 rounded-full border-2 dark:border-white border-neutral-900 object-cover"
+                  alt=""
+                />
+                <img
+                  src="https://randomuser.me/api/portraits/lego/3.jpg"
+                  className="w-9 h-9 lg:w-10 lg:h-10 rounded-full border-2 dark:border-white border-neutral-900 object-cover"
+                  alt=""
+                />
+                <img
+                  src="https://randomuser.me/api/portraits/lego/4.jpg"
+                  className="w-9 h-9 lg:w-10 lg:h-10 rounded-full border-2 dark:border-white border-neutral-900 object-cover"
+                  alt=""
+                />
+                <span className="flex items-center justify-center w-9 h-9 lg:w-10 lg:h-10 rounded-full border-2 dark:border-white border-neutral-900 bg-amber-500 text-xs">
+                  5k+
+                </span>
+              </div>
+              <div className="space-y-1">
+                <div className="flex items-center">
+                  {[...Array(4)].map((_, idx) => {
+                    return (
+                      <BsStarFill key={idx} className="text-amber-500 mr-1" />
+                    );
+                  })}
+                  <BsStarHalf className="text-amber-500 mr-1" />
+                  <span className="text-neutral-600 dark:text-neutral-400 text-sm">
+                    4.8/5
+                  </span>
+                </div>
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm ">
+                  Trusted by{" "}
+                  <span className="font-bold text-neutral-900 dark:text-white">
+                    5000+
+                  </span>{" "}
+                  developers worldwide.
+                </p>
+              </div>
+            </div>
           </div>
+          <div className="flex-1 w-full">
+            <div className="relative">
+              <div className="absolute -inset-0.5 bg-linear-to-r from-amber-500 to-indigo-900 rounded-2xl blur-xl opacity-50 animate-pulse"></div>
+              <div className="relative bg-white dark:bg-neutral-950 p-4 lg:p-5 xl:p-6 rounded-lg shadow-2xl border-neutral-200 dark:border-neutral-800">
+                <div className="flex items-center justify-between mb-3 lg:mb-4">
+                  <div className="flex items-center gap-2">
+                    <span className="h-3 w-3 lg:w-4 lg:h-4 rounded-full bg-red-500"></span>
+                    <span className="h-3 w-3 lg:w-4 lg:h-4 rounded-full bg-amber-500"></span>
+                    <span className="h-3 w-3 lg:w-4 lg:h-4 rounded-full bg-green-500"></span>
+                  </div>
+                  <div className="text-xs text-neutral-500 dark:text-neutral-400">
+                    dark-mode.jsx
+                  </div>
+                </div>
+                <div className="h-56 md:h-64 lg:h-60 xl:h-72 rounded-lg bg-neutral-200 dark:bg-neutral-800 overflow-hidden relative">
+                  <img
+                    src="./code-light.png"
+                    alt=""
+                    className="w-full h-full dark:hidden object-cover object-top-left"
+                  />
+                  <img
+                    src="./code-dark.png"
+                    alt=""
+                    className="w-full h-full object-cover object-top-left dark:block"
+                  />
+                  <div className="absolute bottom-4 right-4">
+                    <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-linear-to-r from-amber-500 to-indigo-300 flex items-center justify-center text-white shadow-lg animate-pulse">
+                      <BsBrightnessHighFill className="text-xl lg:text-2xl" />
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-3 lg:mt-4 flex justify-between items-center">
+                  <div className="relative flex gap-2">
+                    <span className="px-2.5 py-1 lg:px-3 rounded-full bg-neutral-900 text-amber-400 text-xs font-medium flex items-center">
+                      <RiTailwindCssFill className="mr-1" /> Tailwind v4
+                    </span>
+                    <span className="px-2.5 py-1 lg:px-3 rounded-full bg-neutral-100 dark:bg-neutral-800 text-indigo-900 dark:text-indigo-400 border border-neutral-200 dark:dark-neutral-700 text-xs font-medium flex items-center">
+                      <RiReactjsFill className="mr-1" /> ReactJS
+                    </span>
+                  </div>
+                  <button className="w-8 h-8 lg:h-9 lg:w-9 xl:h-10 xl:w-10 flex items-center justify-center rounded-full bg-amber-500 text-neutral-900 hover:bg-amber-600 transition">
+                    <BsCopy className="text-sm" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute bottom-8 left-8 hidden md:block animate-bounce">
+        <div className="flex items-center justify-center bg-neutral-950 text-white px-2.5 py-1.5 text-sm gap-2 shadow-lg rounded-full">
+          <BsCheckCircleFill className="" /> Responsive
+        </div>
+      </div>
+      <div className="absolute top-12 right-[20%] hidden md:block animate-bounce delay-300">
+        <div className="flex items-center justify-center bg-neutral-950 text-white px-2.5 py-1.5 text-sm gap-2 shadow-lg rounded-full">
+          <BsCheckCircleFill className="text-amber-500" /> Accessible
         </div>
       </div>
     </div>
