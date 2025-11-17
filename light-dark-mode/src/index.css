@@ -6,3 +6,10 @@
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  button {
+    cursor: pointer;
+    border-radius: 8px;
+  }
+}
