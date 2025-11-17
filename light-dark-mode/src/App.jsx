@@ -3,15 +3,24 @@ import { BsMoonFill, BsSunFill } from "react-icons/bs";
 import Hero from "./components/Hero";
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedItem = localStorage.getItem("theme");
+    if (savedItem) {
+      return savedItem === "dark";
+    } else {
+      return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    }
+  });
 
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
       document.documentElement.classList.remove("light");
+      localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
       document.documentElement.classList.add("light");
+      localStorage.setItem("theme", "light");
     }
   }, [darkMode]);
 
