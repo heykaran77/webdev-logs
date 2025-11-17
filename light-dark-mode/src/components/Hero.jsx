@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import {
   BsBookHalf,
   BsBrightnessHighFill,
@@ -9,8 +10,11 @@ import {
   BsStarHalf,
 } from "react-icons/bs";
 import { RiReactjsFill, RiTailwindCssFill } from "react-icons/ri";
+import { themeContext } from "../context/themeContext";
 
 const Hero = () => {
+  const { darkMode } = useContext(themeContext);
+  const mode = darkMode ? "dark-mode" : "light-mode";
   return (
     <div className="isolate">
       <div className="absolute inset-0 -z-10">
@@ -116,7 +120,7 @@ const Hero = () => {
                     <span className="h-3 w-3 lg:w-4 lg:h-4 rounded-full bg-green-500"></span>
                   </div>
                   <div className="text-xs text-neutral-500 dark:text-neutral-400">
-                    dark-mode.jsx
+                    {mode}.jsx
                   </div>
                 </div>
                 <div className="h-56 md:h-64 lg:h-60 xl:h-72 rounded-lg bg-neutral-200 dark:bg-neutral-800 overflow-hidden relative">
